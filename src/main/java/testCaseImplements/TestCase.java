@@ -17,7 +17,7 @@ public class TestCase {
 	
 	@BeforeMethod
 	public static void setUpBrowser() {
-		browser.get("https://ezone-web.uat.creativaconsultores.com");
+		browser.get("https://ezone-web.uat.creativaconsultores.com/signup");
 		browser.manage().window().maximize();
 	}
 	
