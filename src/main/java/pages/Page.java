@@ -44,4 +44,18 @@ public class Page {
 		
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
 	}
+	
+	 public String validateTextPresent(WebElement element, String text){
+		     Wait<WebDriver> wait = new FluentWait<WebDriver>(this.browser)
+		                   .withTimeout(Duration.ofSeconds(5))
+                           .pollingEvery(Duration.ofSeconds(5))
+		                   .ignoring(NoSuchElementException.class);
+		
+		     wait.until(ExpectedConditions.textToBePresentInElement(element,text));
+		     return element.getText();
+		
+	}
+
+	
+	
 }
