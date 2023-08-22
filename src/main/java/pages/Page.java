@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
 
@@ -30,7 +31,7 @@ public class Page {
 	public WebElement fluentWaitElement(WebElement element) {
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(this.browser)
 				.withTimeout(Duration.ofSeconds(30))
-				.pollingEvery(Duration.ofSeconds(5))
+				.pollingEvery(Duration.ofSeconds(20))
 				.ignoring(NoSuchElementException.class);
 		
 		return wait.until(ExpectedConditions.visibilityOf(element));
@@ -55,6 +56,8 @@ public class Page {
 		     
 		
 	}
+	 
+	
 
 	
 	

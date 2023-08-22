@@ -9,17 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 
 import pages.Page;
 
-public class LeftMenuPage extends Page {
+public class RightMenuPage extends Page {
 	
-	@FindBy(xpath = "//div[@id=\"navbarNavDropdown\"]/div/ul[1]/li/a")
+	@FindBy(xpath = "//div[@id=\"navbarNavDropdown\"]/div/ul[2]/li/a")
 	 private List<WebElement> menuItems;
 
-	public LeftMenuPage(WebDriver browser) {
+	public RightMenuPage(WebDriver browser) {
 		super(browser);
 		PageFactory.initElements(browser, this);
 	}
 	
-	public void getMenuOptions() {
+public void getMenuOptions() {
 		
 		for (WebElement item : menuItems) {
 			 String menuText = item.getText();
@@ -27,12 +27,9 @@ public class LeftMenuPage extends Page {
 	         
 	         item.click();;
 	            
-	            if (browser.getCurrentUrl().contains(menuUrl)) {
+	         if (browser.getCurrentUrl().contains(menuUrl)) {
 					System.out.println("Menu item '" + menuText + "' navigates to the correct page. " + menuUrl);
-				} else {
-					System.out.println("Menu item '" + menuText + "' navigates to the incorrect page. " + menuUrl);
-
-				}
+				}     
 	            
 	           
 		}
