@@ -73,8 +73,9 @@ public void clickRegister() {
      this.findElementAndClick(registerBtn);
 }
 
-public String getSuccessRegisterMessage(String text) {
-     return this.validateTextPresent(successRegisterText, text);
+public Boolean getSuccessRegisterMessage(String text) {
+	
+    return this.validateTextPresent(successRegisterText, text);
 }      
 
 
