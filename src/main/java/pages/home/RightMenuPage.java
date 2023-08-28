@@ -19,20 +19,22 @@ public class RightMenuPage extends Page {
 		PageFactory.initElements(browser, this);
 	}
 	
-public void getMenuOptions() {
-		
-		for (WebElement item : menuItems) {
-			 String menuText = item.getText();
-	         String menuUrl = item.getAttribute("href");
-	         
-	         item.click();;
-	            
-	         if (browser.getCurrentUrl().contains(menuUrl)) {
-					System.out.println("Menu item '" + menuText + "' navigates to the correct page. " + menuUrl);
-				}     
-	            
-	           
-		}
+	public void getMenuOptions() {
+			
+			for (WebElement item : menuItems) {
+				 String menuText = item.getText();
+		         String menuUrl = item.getAttribute("href");
+		         
+		         item.click();;
+		            
+		         if (browser.getCurrentUrl().contains(menuUrl)) {
+						System.out.println("Menu item '" + menuText + "' navigates to the correct page. " + menuUrl);
+					}     
+		            
+		           
+			}
 	}
+	
+	
 
 }

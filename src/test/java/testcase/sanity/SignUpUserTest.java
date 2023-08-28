@@ -21,7 +21,7 @@ public class SignUpUserTest extends TestCase {
             signUp.setfirstNameInput("Freddy");
             signUp.setLastNameInput("Flores");
             signUp.setPhoneInput("77777799");
-            signUp.setEmailInput("juantest14@gmail.com");
+            signUp.setEmailInput("juantest17@gmail.com");
             signUp.setPasswordInput("12345T3st");
             signUp.setPasswordConfirmInput("12345T3st");
             signUp.checkAcceptTerms();

@@ -37,5 +37,9 @@ public class LeftMenuPage extends Page {
 	           
 		}
 	}
+	
+	public void navigateToOption(int idx) {
+		menuItems.get(idx).click();
+	}
 
 }
