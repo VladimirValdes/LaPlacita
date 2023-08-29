@@ -10,7 +10,10 @@ import pages.Page;
 public class TopHeaderPage extends Page{
 	
 	 @FindBy(xpath = "//a[@routerlink=\"/signup\"]")
-	 private WebElement RegisterLink;
+	 private WebElement registerLink;
+	 
+	 @FindBy(xpath = "//a[@routerlink=\"/login\"]")
+	 private WebElement loginLink;
 
 
 	public TopHeaderPage(WebDriver browser) {
@@ -19,7 +22,11 @@ public class TopHeaderPage extends Page{
 	}
 	
 	public void navigateToRegister() {
-		this.findElementAndClick(RegisterLink);
-     }
+		this.findElementAndClick(registerLink);
+    }
+	
+	public void navigateToLogin() {
+		this.findElementAndClick(loginLink);
+	}
 
 }
