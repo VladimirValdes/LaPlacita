@@ -14,6 +14,15 @@ public class TopHeaderPage extends Page{
 	 
 	 @FindBy(xpath = "//a[@routerlink=\"/login\"]")
 	 private WebElement loginLink;
+	 
+	 @FindBy(xpath = "//a[ text() = 'Cerrar sesión']")
+	 private WebElement logoutLink;
+	 
+	 @FindBy(xpath = "(//a[@href='https://www.instagram.com/laplacitasv'])[1]")
+	 private WebElement instagramLink;
+	 
+	 @FindBy(xpath = "(//a[@href='https://www.facebook.com/LaPlacita_Market_Place'])[1]")
+	 private WebElement facebookLink;
 
 
 	public TopHeaderPage(WebDriver browser) {
@@ -27,6 +36,18 @@ public class TopHeaderPage extends Page{
 	
 	public void navigateToLogin() {
 		this.findElementAndClick(loginLink);
+	}
+	
+	public void logout() {
+		this.scrollAndClickElement(logoutLink);
+	}
+	
+	public Boolean validateRegisterLink(String text) {
+		return this.validateTextPresent(registerLink, text);
+	}
+	
+	public Boolean validateLoginLink(String text) {
+		return this.validateTextPresent(loginLink, text);
 	}
 
 }

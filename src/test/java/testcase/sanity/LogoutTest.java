@@ -8,12 +8,11 @@ import pages.LoginPage;
 import pages.home.TopHeaderPage;
 import testCaseImplements.TestCase;
 
-public class LoginTest extends TestCase{
+public class LogoutTest extends TestCase{
 
-	
 	@Test
 	
-	public void userLoginTest() {
+	public void logoutUserTest() {
 		
 		TopHeaderPage header = new TopHeaderPage(browser);
 		header.navigateToLogin();
@@ -24,7 +23,12 @@ public class LoginTest extends TestCase{
 		login.setEmailInput("juantest16@gmail.com");
 		login.setPasswordInput("12345T3st");
 		login.clickLogin();
-		assertTrue(login.getSuccessRegisterMessage("Freddy Flores"));
+		login.getSuccessRegisterMessage("Freddy Flores");
+		
+		header.logout();
+		
+		assertTrue(header.validateRegisterLink("Regístrate"));
+		assertTrue(header.validateLoginLink("Iniciar sesión"));
 		
 	}
 }
